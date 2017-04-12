@@ -1,0 +1,142 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+char str[101][20] ={" ","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen","Twenty",
+    "Twenty One","Twenty Two","Twenty Three","Twenty Four","Twenty Five","Twenty Six","Twenty Seven","Twenty Eight","Twenty Nine","Thirty","Thirty One","Thirty Two","Thirty Three","Thirty Four","Thirty Five","Thirty Six","Thirty Seven","Thirty Eight","Thirty Nine","Forty","Forty One","Forty Two","Forty Three","Forty Four","Forty Five","Forty Six","Forty Seven","Forty Eight","Forty Nine","Fifty","Fifty One","Fifty Two","Fifty Three","Fifty Four","Fifty Five","Fifty Six","Fifty Seven","Fifty Eight","Fifty Nine","Sixty","Sixty One","Sixty Two","Sixty Three","Sixty Four","Sixty Five","Sixty Six","Sixty Seven","Sixty Eight"
+    ,"Sixty Nine","Seventy","Seventy One","Seventy Two","Seventy Three","Seventy Four","Seventy Five","Seventy Six","Seventy Seven","Seventy Eight","Seventy Nine","Eighty","Eighty One","Eighty Two","Eighty Three","Eighty Four","Eighty Five","Eighty Six","Eighty Seven","Eighty Eight","Eighty Nine","Ninety","Ninety One","Ninety Two","Ninety Three","Ninety Four","Ninety Five","Ninety Six","Ninety Seven","Ninety Eight","Ninety Nine","One Hundred"};
+int main()
+{
+    double num;
+    scanf("%lf", &num);
+    int l = log10(num)+1;
+    char ch[12];
+    itoa((int)num, ch, 10);
+    if(l == 1)
+    {
+        printf("%s", str[(int)num]);
+    }
+    else if(l == 2)
+    {
+        printf("%s", str[(int)num]);
+    }
+    else if(l == 3)
+    {
+        int s = ch[0]-48;
+        printf("%s Hundred ", str[s]);
+        s = ((ch[1]-48)*10)+ch[2]-48;
+        printf("%s", str[s]);
+    }
+    else if(l == 4)
+    {
+        int s = ch[0]-48;
+        if(s > 1)
+            printf("%s Thousands", str[s]);
+        else if(s == 1)
+            printf("%s Thousand", str[s]);
+        s = (ch[1]-48);
+        if(s > 1)
+            printf("%s Hundreds ", str[s]);
+        else if(s == 1)
+            printf("%s Hundred ", str[s]);
+        s = ((ch[2]-48)*10)+ch[3]-48;
+        printf("%s", str[s]);
+    }
+    else if(l == 5)
+    {
+        int s = ((ch[0]-48)*10)+ch[1]-48;
+        if(s > 1)
+            printf("%s Thousands", str[s]);
+        else if(s == 1)
+            printf("%s Thousand", str[s]);
+        s = (ch[2]-48);
+        if(s > 1)
+            printf("%s Hundreds ", str[s]);
+        else if(s == 1)
+            printf("%s Hundred ", str[s]);
+        s = ((ch[3]-48)*10)+ch[4]-48;
+        printf("%s", str[s]);
+    }
+    else if(l == 6)
+    {
+        int s = ch[0]-48;
+        printf("%s Lac ", str[s]);
+        s = ((ch[1]-48)*10)+ch[2]-48;
+        if(s > 1)
+            printf("%s Thousands ", str[s]);
+        else if(s == 1)
+            printf("%s Thousand ", str[s]);
+        s = (ch[3]-48);
+        if(s > 1)
+            printf("%s Hundreds ", str[s]);
+        else if(s == 1)
+            printf("%s Hundred ", str[s]);
+        s = ((ch[4]-48)*10)+ch[5]-48;
+        printf("%s", str[s]);
+    }
+    else if(l == 7)
+    {
+        int s = ((ch[0]-48)*10)+ch[1]-48;
+        if(s > 1)
+            printf("%s Lacs ", str[s]);
+        else if(s == 1)
+            printf("%s Lac ", str[s]);
+        s = ((ch[2]-48)*10)+ch[3]-48;
+        if(s > 1)
+            printf("%s Thousands ", str[s]);
+        else if(s == 1)
+            printf("%s Thousand ", str[s]);
+        s = (ch[4]-48);
+        if(s > 1)
+            printf("%s Hundreds ", str[s]);
+        else if(s == 1)
+            printf("%s Hundred ", str[s]);
+        s = ((ch[5]-48)*10)+ch[6]-48;
+        printf("%s", str[s]);
+    }
+    else if(l == 8)
+    {
+        int s = ch[0]-48;
+        printf("%s Core ", str[s]);
+        s = ((ch[1]-48)*10)+ch[2]-48;
+        if(s > 1)
+            printf("%s Lacs ", str[s]);
+        else if(s == 1)
+            printf("%s Lac ", str[s]);
+        s = ((ch[3]-48)*10)+ch[4]-48;
+        if(s > 1)
+            printf("%s Thousands ", str[s]);
+        else if(s == 1)
+            printf("%s Thousand ", str[s]);
+        s = (ch[5]-48);
+        if(s > 1)
+            printf("%s Hundreds ", str[s]);
+        else if(s == 1)
+            printf("%s Hundred ", str[s]);
+        s = ((ch[6]-48)*10)+ch[7]-48;
+        printf("%s", str[s]);
+    }
+    else if(l == 9)
+    {
+        int s = ((ch[0]-48)*10)+ch[1]-48;
+        printf("%s Core ", str[s]);
+        s = ((ch[2]-48)*10)+ch[3]-48;
+        if(s > 1)
+            printf("%s Lacs ", str[s]);
+        else if(s == 1)
+            printf("%s Lac ", str[s]);
+        s = ((ch[4]-48)*10)+ch[5]-48;
+        if(s > 1)
+            printf("%s Thousands ", str[s]);
+        else if(s == 1)
+            printf("%s Thousand ", str[s]);
+        s = ch[6]-48;
+        if(s > 1)
+            printf("%s Hundreds ", str[s]);
+        else if(s == 1)
+            printf("%s Hundred ", str[s]);
+        s = ((ch[7]-48)*10)+(ch[8]-48);
+        printf("%s", str[s]);
+    }
+    return 0;
+}
